@@ -1,0 +1,17 @@
+package edu.neu.csye6200;
+//wage for employee (sort)
+//gpa (sort)
+
+
+// call studentFactory
+// use singleFactory pattern
+// then change to Factory pattern
+//class company : sortEmployee { copy all the codes from employees sorting, create a constructor + addEmployee()}
+public class Driver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

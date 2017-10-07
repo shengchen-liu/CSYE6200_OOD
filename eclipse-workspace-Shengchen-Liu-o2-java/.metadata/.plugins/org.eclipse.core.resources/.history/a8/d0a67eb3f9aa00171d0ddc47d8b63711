@@ -1,0 +1,14 @@
+package edu.neu.csye6200;
+
+
+public class PersonFactory implements PersonAPI {
+	@Override
+	public String Speak() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	//getPerson () //employee, student
+}
+
+	

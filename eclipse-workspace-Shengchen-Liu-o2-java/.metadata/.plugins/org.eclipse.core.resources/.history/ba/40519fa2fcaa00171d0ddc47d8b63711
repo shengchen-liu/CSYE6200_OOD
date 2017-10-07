@@ -1,0 +1,24 @@
+package edu.neu.csye6200;
+
+
+public class PersonFactory {
+
+	private PersonFactory() {
+		
+	}
+	
+	public static PersonAPI getPerson(int criteria){
+		PersonAPI obj = null; // new PersonAPI();
+		if (criteria == 0) {
+			obj = new Student();
+		}
+		else {
+			obj = new Employee();
+		}
+		return obj;
+		
+	}
+	//getPerson () //employee, student
+}
+
+	

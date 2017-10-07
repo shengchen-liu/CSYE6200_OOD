@@ -1,0 +1,22 @@
+package edu.neu.csye6200;
+
+public class Student extends PersonAPI{
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	//toString
+
+	@Override
+	public void sort() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String Speak() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
