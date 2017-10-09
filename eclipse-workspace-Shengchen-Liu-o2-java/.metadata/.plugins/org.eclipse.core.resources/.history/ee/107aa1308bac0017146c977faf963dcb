@@ -1,0 +1,26 @@
+package edu.neu.csye6200;
+
+public class Employee extends Person implements Comparable<Employee>{
+	private Double wage;
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	@Override
+	public int compareTo(Employee employee) {
+		return employee.getWage().compareTo(this.getWage());
+	}
+
+	public double getWage() {
+		return wage;
+	}
+
+	public void setWage(double wage) {
+		this.wage = wage;
+	}
+
+
+
+
+}

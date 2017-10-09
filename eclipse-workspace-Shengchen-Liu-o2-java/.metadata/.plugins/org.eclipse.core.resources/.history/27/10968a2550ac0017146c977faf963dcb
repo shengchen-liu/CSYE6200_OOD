@@ -1,0 +1,46 @@
+package edu.neu.csye6200;
+
+public class Person implements Comparable<Person>{
+	private String firstName;
+	private String lastName;
+	private int age;
+	
+	/**
+	public void sort() {
+		System.out.println("Sorting persons... ");
+		System.out.println("Sorting persons... done!");
+	}
+	**/
+
+	@Override
+    public int compareTo(Person person) {
+        return lastName.compareTo(person.lastName);
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String fName) {
+		firstName = fName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lName) {
+		lastName = lName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int AGE) {
+		age = AGE;
+	}
+
+
+
+}

@@ -1,6 +1,6 @@
 package edu.neu.csye6200;
 
-public class Student extends PersonAPI implements Comparable<Student>{
+public class Student extends Person implements Comparable<Student> {
 
 	@Override
 	public String toString() {
@@ -8,24 +8,6 @@ public class Student extends PersonAPI implements Comparable<Student>{
 	}
 	//toString
 
-	@Override
-	public void sort() {
-		System.out.println("Sorting students...");				
-	}
-	
-	@Override
-	public int compareTo(Student student) {
-		Double d = new Double (student.getGPA()*100 - this.getGPA()*100);
-		return d.intValue();
-	}
-/**
-	@Override
-	public String Speak() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-**/
 	private Double GPA;
 	private String parentFname;
 	private String parentLname;
@@ -81,13 +63,17 @@ public class Student extends PersonAPI implements Comparable<Student>{
 		GPA = gpa;
 	}
 	
-	public int compareStudent(Student student) {
-		// TODO Auto-generated method stub
-		//return super.compareTo(student);
-		Double d = new Double (student.getGPA()*100 - this.getGPA()*100);
-		int n = d.intValue();
-		return n;
-	}
+
+	@Override
+	/**
+	 * sort by GPA, descending order.
+	 */
+    public int compareTo(Student student) {
+        return student.GPA.compareTo(this.GPA);
+        
+    }   
+
+	
 }
 	
 

@@ -1,0 +1,28 @@
+package edu.neu.csye6200;
+
+public class Person{
+	private String FirstName;
+	private String LastName;
+	private int Age;
+	
+	public void sort() {
+		System.out.println("Sorting persons... ");
+		System.out.println("Sorting persons... done!");
+	}
+
+	public void setAge(int i) {
+		
+		
+	}
+
+	public void setFirstName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setLastName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

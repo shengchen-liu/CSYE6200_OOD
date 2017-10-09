@@ -1,0 +1,11 @@
+package edu.neu.csye6200;
+
+public class Employee extends Person {
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
+
+}

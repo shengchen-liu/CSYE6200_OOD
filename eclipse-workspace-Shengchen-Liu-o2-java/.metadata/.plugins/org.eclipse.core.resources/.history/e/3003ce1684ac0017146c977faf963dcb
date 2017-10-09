@@ -1,0 +1,27 @@
+package edu.neu.csye6200;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class School {
+	public void sort() {
+		List<Person> students = new ArrayList<Person>();
+		
+		students.add(PersonFactory.getPerson(0, "Tyrus", "Jones", 26, 3.7));
+		students.add(PersonFactory.getPerson(0, "Jimmy", "Butler", 29, 3.5));
+		students.add(PersonFactory.getPerson(0, "Jeremy", "Lin", 28, 3.9));
+		students.add(PersonFactory.getPerson(0, "Andrew", "Wiggins", 22, 4.0));
+		System.out.println(students.size() + "students in list.");
+		
+		Collections.sort(students);
+		for ( Student s: students) {
+			System.out.println("Student: " + s.getFirstName() );
+		}
+	}
+	
+	public static void demo() {
+		School obj = new School();
+		obj.sort();
+	}
+}
