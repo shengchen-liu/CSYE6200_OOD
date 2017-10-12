@@ -144,3 +144,5 @@ Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Failure to tra
 	... 8 common frames omitted
 2017-10-07 17:14:04,629 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2017-10-08 11:50:48,835 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-12 12:05:44,906 [Worker-8] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-10-12 12:13:53,006 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
