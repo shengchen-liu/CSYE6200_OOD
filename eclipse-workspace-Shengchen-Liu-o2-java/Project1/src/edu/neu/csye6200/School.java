@@ -6,28 +6,35 @@ import java.util.List;
 
 public class School {
 	private List<Student> students = new ArrayList<Student>();
+
+	public void load(Student s) {
+		students.add(s);
+	}
+
 	public void sort() {
 
-		students.add((Student) PersonFactory.getPerson(0, "Tyrus", "Jones", 26, 3.7, 0));
-		students.add((Student) PersonFactory.getPerson(0, "Jimmy", "Butler", 29, 3.5, 0));
-		students.add((Student) PersonFactory.getPerson(0, "Jeremy", "Lin", 28, 3.9, 0 ));
-		students.add((Student) PersonFactory.getPerson(0, "Andrew", "Wiggins", 22, 4.0, 0));
 		System.out.println(students.size() + " students in list.");
-		
+
 		Collections.sort(students);
-		for ( Student s: students) {
-			System.out.println("Student: " + s.getFirstName() + " " + s.getLastName() + ". Age: " + s.getAge() 
+		for (Student s : students) {
+			System.out.println("Student: " + s.getFirstName() + " " + s.getLastName() + ". Age: " + s.getAge()
 					+ ". GPA: " + s.getGPA());
 		}
 	}
-	
-	public void addStudent(String fName, String lName, int age, double gpa, double wage) {
-		students.add((Student) PersonFactory.getPerson(0, fName, lName, age, gpa, wage));
+
+	public void addStudent(String fName, String lName, int age, double gpa) {
+		Student s = (Student) PersonFactory.getPerson("s");
+		s.setFirstName(fName);
+		s.setLastName(lName);
+		s.setAge(age);
+		s.setGPA(gpa);
+		students.add(s);
 	}
-	
+
 	public static void demo() {
-		School obj = new School();
-		obj.addStudent("Stephen", "Curry", 28, 3.7, 0);
+		String fileName = "students2.csv";		
+		ParserReader_Student parser = new ParserReader_Student();
+		School obj = parser.read(fileName);
 		obj.sort();
 	}
 }

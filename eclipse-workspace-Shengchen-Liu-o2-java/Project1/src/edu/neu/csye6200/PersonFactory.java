@@ -7,16 +7,16 @@ public class PersonFactory {
 		
 	}
 	
-	public static Person getPerson(int criteria, String fname, String lname, int age, double GPA, double wage){
-		if (criteria == 0) {
-			Student person = new Student(fname, lname, age, GPA);
+	public static Person getPerson(String criteria){
+		if (criteria == "s") {
+			Student person = new Student();
 			return person;
 		}
-		else {
-			Employee person = new Employee(fname, lname, age, wage);
+		else if (criteria == "e" ){
+			Employee person = new Employee();
 			return person;
 		}
-		
+		else throw new ArithmeticException("Criteria is not valid!");
 	}
 
 }
