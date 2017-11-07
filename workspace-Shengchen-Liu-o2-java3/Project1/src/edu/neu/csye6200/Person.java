@@ -1,8 +1,6 @@
 package edu.neu.csye6200;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Person extends AbstractPerson{
@@ -11,18 +9,18 @@ public class Person extends AbstractPerson{
 	private String firstName;
 	private String lastName;
 	private int age;
-
+	private Double gpa;
 	private double wage;
 	
-//	public double getGPA() {
-//		return gpa;
-//	}
-//
-//	public void setGPA(double GPA) {
-//		this.gpa = GPA;
-//	}
+	public Double getGPA() {
+		return gpa;
+	}
 
-	public double getWage() {
+	public void setGPA(double GPA) {
+		this.gpa = GPA;
+	}
+
+	public Double getWage() {
 		return wage;
 	}
 
@@ -105,9 +103,19 @@ public class Person extends AbstractPerson{
 	}
 
 	@Override
-	public AbstractPerson parsePersonIDCSV(String personCSVLine) {
-		// TODO Auto-generated method stub
-		return null;
+	public Person parsePersonIDCSV(String personCSVLine) {
+		
+		Scanner in = new Scanner(personCSVLine);
+		in.useDelimiter(",");
+		this.setId(in.nextInt());
+		this.setFirstName(in.next());
+		this.setLastName(in.next());
+		this.setAge(in.nextInt());
+		this.setGPA(in.nextDouble());
+		this.setWage(in.nextDouble());
+		in.close();
+		return this;
+
 	}
 
 	public Person() {
@@ -116,8 +124,6 @@ public class Person extends AbstractPerson{
 		firstName = null;
 		lastName = null;
 		age = 0;
-		//gpa = 0;
-		wage = 0;
 	}
 
 	public Person(int iD, String firstName, String lastName, int age, double gpa, double wage) {
@@ -126,42 +132,6 @@ public class Person extends AbstractPerson{
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		//this.gpa = gpa;
-		this.wage = wage;
 	}
-	
-
-	
-	public void demo() {
-		List<String> csvData = new ArrayList<String>();
-		csvData.add("1,sam,jones,7,2.65,6.75,end");
-		csvData.add("2,dan,smith,6,2.75,4.80,end");
-		csvData.add("3,jim,adams,8,2.35,3.25,end");
-		csvData.add("4,jan,lake,9,2.95,5.85,end");
-		csvData.add("5,sam,jones,7,2.65,2.75,end");
 		
-		List<Person> people = new ArrayList<Person>();
-		for (String line:csvData) {
-			Scanner in = new Scanner(line);
-			in.useDelimiter(",");
-			Person p = new Person();
-			p.setId(in.nextInt());
-			p.setFirstName(in.next());
-			p.setLastName(in.next());
-			p.setAge(in.nextInt());
-			//p.setGPA(in.nextDouble());
-			//p.setWage(in.nextDouble());
-			people.add(p);
-			in.close();
-		}
-		
-		people.sort((p1,p2) -> p1.getLastName().compareTo(p2.getLastName()));
-		System.out.println("Sort all persons by last name...");
-		for( Person p: people) {
-			System.out.println("id: "+ p.getId() + " FirstName: "+ p.getFirstName() + 
-					" LastName: " + p.getLastName() + " age: " + p.getAge());
-		}
-	}
-	
-	
 }

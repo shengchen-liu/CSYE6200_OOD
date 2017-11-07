@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Midterm {
-	private int a;
-	private int b;
-	private int c;
-	private double aa;
-	private double bb;
-	private double cc;
+	private double a;
+	private double b;
+	private double c;
 	
 	public Midterm() {
 		super();
@@ -20,11 +17,11 @@ public class Midterm {
 	
 	
 	
-	public Midterm(double aa, double bb, double cc) {
+	public Midterm(double a, double b, double c) {
 		super();
-		this.aa = aa;
-		this.bb = bb;
-		this.cc = cc;
+		this.a = a;
+		this.b = b;
+		this.c = c;
 	}
 
 
@@ -37,19 +34,19 @@ public class Midterm {
 		a++;
 		b++;
 		c++;
-		int sum = a + b + c;
+		double sum = a + b + c;
 		sum = sum*2;
 		System.out.println("Running method 'transformIntData': " + a + ", "  + b + ", " + c + ", sum =" + sum);
 	}
 	
 	public void TransformIntData1() {
-		List<Integer> LI = new ArrayList<Integer>();
-		int sum = 0;
+		List<Double> LI = new ArrayList<Double>();
+		double sum = 0;
 		LI.add(a);
 		LI.add(b);
 		LI.add(c);
 		System.out.println("Running method 'TransformIntData1':...");
-		for (int i:LI) {
+		for (double i:LI) {
 			i++;
 			sum = sum + i;
 			System.out.println(i);
@@ -61,9 +58,9 @@ public class Midterm {
 	public void TransformIntData2() {
 		List<Double> LD = new ArrayList<Double>();
 		double sum = 0;
-		LD.add(aa);
-		LD.add(bb);
-		LD.add(cc);
+		LD.add(a);
+		LD.add(b);
+		LD.add(c);
 		System.out.println("Running method 'TransformIntData2':...");
 		for (double d:LD) {
 			d++;
